@@ -1,0 +1,23 @@
+Ask the user to input value "Enter the Xth value:"
+Take in the inputted value and 
+Repeat this until the user inputs a 0
+
+Separate the value inputted into the different digits using modulo
+While the temporary value is not 0:
+    Take the variable modulo 10 and add this to a temporary total
+    Take the variable and divide it by 10 to get the next value to add up
+Store these temorary total and add them up
+
+If this added up digit is even (modulo is equal to 0)
+    Add this to the even numbers total
+    Increment the count of even numbers by 1
+If this added up digit is even (not modulo 0)
+    Add this to the even numbers total
+    Increment the count of odd numbers by 1
+
+Take the total of the even numbers and divide it by the even count for the average even
+Take the total of the odd numbers and divide it by the odd count for the average odd
+
+Print "Average of input values whose digits sum up to an even number:" 
+Print "Average of input values whose digits sum up to an odd number:"
+

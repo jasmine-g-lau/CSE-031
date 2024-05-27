@@ -1,0 +1,53 @@
+TPS 1:
+
+1. Open MemCast.c, compile and run the program. What do you expect the program to print? (%x in
+printf allows an integer to be printed in Hex format).
+    print hexadecimal, 2
+
+2.Before changing the code, what do you expect the program to print if you print four_ints[0]
+again at the end of the program?
+    expected to stay the same as initial, 2
+
+3. Insert a print statement to output four_ints[0] at the end of the program in hex and verify your
+answer from (2).
+
+4. Now add a print statement to the program so it will print out four_ints[1] in hex. What does it
+print? Are you surprised (or lost) by the results?
+    expect print hexadecimal representation
+
+5. Let us study the code carefully and investigate what happened. No, the memory did not go crazy.
+
+    a. How many array(s) were allocated in this program?
+        2 arrays, one int, one char 
+
+    b. Are four_ints and four_c pointing to the same location?
+        yes 
+
+    c. Verify your answer of (b) by printing out the values of four_ints and four_c.
+        1 array -> pointing to same location
+
+6. Write a loop to print out the addresses and values (in Hex) of all the elements of four_ints. What is
+the difference in addresses between two consecutive elements? Discuss what this difference means.
+    difference in addresses of 2 consectuvive elements = size of data type
+
+7. Use a piece of paper to draw the layout of the array horizontally so that the smallest address begins
+from the RIGHT-hand-side. Indicate the address and
+value of each element based on the results of
+(6). You can draw it digitally.
+
+    address [..., ..., ..., ...,]
+    value [0x00000002, 0x00000002, 0x00000002, 0x00000002]
+
+8. Now, write a loop to print out the same information for four_c as you did in (6). What is the
+difference in addresses between two consecutive elements? Discuss what this difference means.
+    differences in 2 addresses = 1 (size of char data type)
+
+9. Use the same piece of paper (or file) from (7) to draw a similar structure for four_c.
+    address [..., ..., ..., ...]
+    value [0x41, 0x42, 0x43, 0x44]
+
+10. By comparing the layout of the array pointed by the two pointers, what do you observe in terms of how
+C accesses memory when the index of an array is incremented?
+    index incremented = memory moves to next location based on size
+    four_ints increments by int size
+    four_c increments by char size

@@ -1,0 +1,40 @@
+Activity 1:
+
+1. This program will store integers entered by a user into an array. It then calls bubbleSort to sort the
+array. Study the code in bubbleSort to refresh your memory on Bubble Sort algorithm and answer
+the following questions:
+
+    a. Why do we need to pass the size of array to the function?
+        pass size of funciton to ensure "bubbleSort" know the number of elements in the array
+        no size = impossible to iterate elements of array accurately
+
+    b. Is the original array (the one being passed into the function) changed at the end of this function?
+        no, sorting is dont in "s_arr"
+
+    c. Why do you think a new array (s_array) is needed to store the result of the sorted values (why not
+update the array as we sort)? Hint: look at what the main function does.
+        new "s_arr: needed to store sorted values => bubble sort = swapping elemts within the array
+        if update original array, awapping operations would affect comparisons in subsequent steps
+
+2. Once you understand how Bubble Sort works,
+re-write the code so that you are accessing the array’s
+content using pointer notations (*s_arr), i.e., you cannot use s_arr[j] anymore. Comment out
+the original code so the algorithm will not be run twice.
+
+3. After the array is sorted, the program will ask user to enter a key to search for in the sorted array. It will
+then call bSearch to perform a Binary Search on the array. Complete the bSearch function so that it
+implements Binary Search recursively (no loop!). You must use pointer notations here as well. Pay
+attention to what is written in main so your bSearch will return an appropriate value.
+
+Activity 2: 
+1. Start with two pointers at the head of the list
+
+2. On each iteration, increment the first pointer by one node and the second pointer by two nodes. If it is
+not possible to do one or both because of a null pointer, then we know there is an end to the list and
+there is therefore no cycle.
+
+3. We know there is a cycle if
+
+    a. The second pointer is the same as the first pointer
+
+    b. The next node of the second pointer is pointed to by the first pointer

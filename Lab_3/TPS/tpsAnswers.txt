@@ -1,0 +1,46 @@
+TPS 1:
+    1. Name the 3 pools for memory and what kind of variables will be stored in each pool.
+        Static: global variaables, static variables
+        Stack: local variables, function parameters
+        Heap: dynamic memory allocation (malloc, free)
+
+    2. Open mem.c with your favorite text editor and discuss the following questions with your partner:
+        a. How many variables are declared?
+            3 variables
+        
+        b. How many of them are pointers? What type of data does each pointer point to?
+            2 pointers, "ptr" and "handle"
+            ptr: point to integer (int *)
+            handle: pointer to pointer to integer (int **)
+
+        c. Which pool of memory are these variables stored in?
+            num = Stack
+            ptr and handle = stack, then point to mempry allocated on the heap
+        
+        d. Which pool of memory will the pointer ptr point to in line 12.
+            memory allocated on heap (malloc)
+
+    3. Using a piece of paper (or a drawing app), draw the 3 pools of memory and indicate the locations (in
+    which pool?) of the variables in mem.c using boxes (like what we did in lecture). Label the boxes with
+    variable names, their content, and their addresses. You will need to insert extra code to obtain the
+    addresses of these variables.
+        stack (num (storing value "14"), ptr, handle) 
+        heap (memory allocated for "14" (num = 14), memory allocated for unknown value (*ptr = num))
+        &num, &ptr, &handle = addresses in stack where variables are stored
+        *ptr, *handle = addresses in heap dynamically allocated 
+
+    4. In the same drawing, use arrows to connect each pointer to its destination.
+    ptr -> *ptr
+    handle -> *handle
+
+TPS 2:
+    1. Open NodeStruct.c and discuss what this program does.
+    
+    2. Insert extra code to print out the value of head, addresses of head, iValue, fValue, and next pointed by head.
+    
+    3. Based on the addresses of the members of Node structure, what do you observe about how structures 
+    are stored in memory? What is the relationship between the pointer (head) and its destination (the
+    Node structure)?
+        head = address of dynamically allocated memory
+        pointer head pointing to struct (iValue int, fValue float, next pointer)
+            points to integer if iValue, float of fValue, pointer of next

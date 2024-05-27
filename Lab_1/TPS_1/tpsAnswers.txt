@@ -1,0 +1,32 @@
+TPS activity 1:
+Jasmine Lau
+
+
+TPS activity 2:
+1. I can click it or use shortcut Ctrl + `
+    a. Yes
+    b. Multitasking or checking multiple things.
+2. dir
+3. cd Desktop (my case cd CSE 031)
+4. mkdir CSE031
+5. cd CSE031
+    mkdir Lab_1
+
+
+TPS activity 3:
+1. 
+2. 
+3. gcc main.c
+    ./a.exe
+4. If it has no errors (or outputs expected result)
+5. -c = compile only, skipping linking step
+    creates main.o file
+6. -g = include debugging information in executable
+7. gcc main.c -o cselab1 --> cselab.exe
+8. both compile and link, create a.exe
+9. compile = ./a.exe
+
+
+
+
+

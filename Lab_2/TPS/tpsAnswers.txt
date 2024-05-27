@@ -1,0 +1,46 @@
+Activity 1
+    1. 
+    2. 
+    3. 
+    4. 
+
+Activity 2
+    1. gcc -g -o punish punishment.c
+        To compile your punishment.c file for debugging, use the -g flag to include debugging information
+
+    2. gdb punish
+        To load the compiled program into GDB
+
+    3. run or r
+        Once loaded in GDB, you can run the program
+    
+    4. break <line_number>
+        Breakpoints are points in your code where you want the program to stop so you can examine its state.
+    
+    5. step
+        After stopping at a breakpoint, you can run the program line by line using the step command. 
+    
+    6. print variable_name
+        To see the value of a variable
+    
+    7. continue
+        To continue running the program until it completes or hits another breakpoint
+    
+    8. quit or q
+        To exit GDB
+
+Activity 3:
+    1. 4 variables, 2 are int pointers, px, py
+    2. x = 0, y = 0, arr[10] = -1897596928
+        this is because x and y are variables, and arr[10] is a pointer for the 10th argument
+    3. you can declare and initialize every variable to 0
+    4. 
+    5. 
+    6.
+    7. 
+    8.
+    9.
+    10. Yes this makes sense because the address of the arr would be pointing to the first one.
+                                                            
+
+

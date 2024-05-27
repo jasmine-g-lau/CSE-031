@@ -1,0 +1,44 @@
+1: average.c
+    1. What line caused the segmentation fault?
+        gcc -g -o avg average.c
+        gdb avg 
+        run
+        backtrack to find stack trace, identify the line with the segmentation fault
+
+        #0  0x00007ffff7df4149 in __vfscanf_internal (s=<optimized out>, format=<optimized out>, argptr=argptr@entry=0x7fffffffe060, mode_flags=mode_flags@entry=2) at ./stdio-common/vfscanf-internal.c:1896
+        #1  0x00007ffff7def142 in __isoc99_scanf (format=<optimized out>) at ./stdio-common/isoc99_scanf.c:30
+        #2  0x0000555555555242 in read_values (sum=1) at average.c:24
+        #3  0x0000555555555285 in main () at average.c:32
+
+            crashes at line 30, 24, 32
+
+    2. How do you fix the line so it works properly?
+        make sure that the input is taken as a pointer
+        edit line 24
+
+    3. What is the bug here?
+        run and add breakpoints at 16, 18, 20, 21, 23, 26
+        step through function and continue until end of function
+        the bugs is that the average does not take into account the last value when calculating the average
+    
+    4. How do you fix it?
+        make sure that sum is passed as a pointer (pass the address through function)
+        (edit lines 16, 18, 23, 24, 32)
+
+2: appendTest.c
+    1. Run the program with the following input: “HELLO!” for str1 and “hello!” for str2. Is the output
+    expected?
+        no, it prints HELLO!hello!llo!. instead of "HELLO!hello!"
+  
+    2. Do not stop the program, enter “HI!” for str1 and “hi!” for str2. Is the output expected? What is
+    the bug here? Try to fix the program so it will print the output correctly.
+        
+        `no, it prints HI!hi!hellhi!. The values in the string are uninitialized so it prints out garbage values
+   
+    3. Do not stop the program, enter “Hello! How are you?” for str1 and “I am fine, thank
+    you!” for str2. Is the output expected? Why do you think this happens? You do not need to fix
+    this
+        no, it prints, Hello! HowIam fine, thank you!Iam fine, thank you!.
+        This happens because before str1 can reach the end of their string, the results of str2 are starting to get appended
+
+

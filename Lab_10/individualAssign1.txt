@@ -1,0 +1,43 @@
+1. What is the full name of the processor you selected?
+    Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
+
+2. How many levels of caches does your CPU have (L1, L2, L3, etc.)? Is there a separate L1 cache for data
+and instructions?
+    It has L1, L2, and L3, with a separate L1 is for data and instructions
+
+    "TLB/Cache details:
+    64-byte Prefetching
+    Data TLB: 1-GB pages, 4-way set associative, 4 entries
+    Data TLB: 4-KB Pages, 4-way set associative, 64 entries
+    Instruction TLB: 4-KByte pages, 8-way set associative, 128 entries
+    L2 TLB: 1-MB, 4-way set associative, 64-byte line size
+    Shared 2nd-Level TLB: 4-KB / 2-MB pages, 6-way associative, 1536 entries. Plus, 1-GB pages, 4-way, 16 entries
+
+    Cache details:
+    Cache:	            L1 data                 | L1 instruction        | L2                            | L3
+    Size:	            4 x 32 KB               | 4 x 32 KB             | 4 x 256 KB                    | 6 MB
+    Associativity:	    8-way set associative	|8-way set associative	|4-way set associative	        |12-way set associative
+    Line size:	        64 bytes	            |64 bytes	            |64 bytes	                    |64 bytes
+    Comments:	        Direct-mapped	        |Direct-mapped	        |Non-inclusive Direct-mapped	|Inclusive Direct-mapped Shared between all cores"
+
+3. How big is each level of cache?
+    L1 data is 4x32 KB, L1 instruction is 4x32 KB, L2 is 4x256 KB, and L3 is 6 MB
+
+4. What is the block size (sometimes it is called line size)?
+    L1 data is 64 bytes, L1 instruction is 64 bytes, L2 is 64 bytes, and L3 is 64 bytes (all the same size)
+
+5. Are the caches direct-mapped or set associative? If set associative, how many ways?
+
+    L1 data is 8-way set associative and direct-mapped, L1 instruction is 8-way set associative and direct-mapped,
+    L2 is 4-way set associative, non-inclusive, and direct-mapped, and L3 is 12-way set associative, inclusive, direct-mapped, and shared between all cores
+
+6. With L1 data cache, how many tag bits, index bits, and offset bits?
+    Block size = 64 bytes
+    Number of blocks = (sizeOfDataCache) / (blockSize)
+        (4 x 32 KB) / (64 bytes) = 512 blocks  
+    Index bits = log2(512/8)
+        log2(64) = 6 bits
+    Tag bits = totalAddressBits - (indexBits + offsetBits)
+        64 -(6 + 6) = 52 bits  
+
+    Tag bits: 52, Index bits: 6, Offset bits: 6
